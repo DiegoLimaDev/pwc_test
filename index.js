@@ -34,3 +34,18 @@ const removeDuplicate = (string) => {
 console.log(removeDuplicate('Fazendo um teste de caracteres duplicados'));
 console.log(removeDuplicate('PWC is an amazing company'));
 console.log(removeDuplicate('Hello, World!'));
+
+
+//Questão  4
+const toUpperCaseFirstLetter = (string) => {
+   const arr = string.split(' ');
+   const resultArr = [];
+   for (let i of arr) {
+      resultArr.push(i.charAt(0).toUpperCase() + i.slice(1));
+   }
+   return resultArr.join(' ');
+}
+
+console.log(toUpperCaseFirstLetter('diego lima da silva'));
+console.log(toUpperCaseFirstLetter('capitalizando a primeira letra de cada palavra'));
+console.log(toUpperCaseFirstLetter(`hello, how are you? i'm fine thank you`));
