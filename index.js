@@ -1,4 +1,6 @@
 // Code Challenge PWC
+//Diego Lima da Silva
+//https://www.linkedin.com/in/diegolimadev/
 
 
 //Questão 1
@@ -35,7 +37,6 @@ console.log(removeDuplicate('Fazendo um teste de caracteres duplicados'));
 console.log(removeDuplicate('PWC is an amazing company'));
 console.log(removeDuplicate('Hello, World!'));
 
-
 //Questão  4
 const toUpperCaseFirstLetter = (string) => {
    const arr = string.split(' ');
@@ -49,3 +50,26 @@ const toUpperCaseFirstLetter = (string) => {
 console.log(toUpperCaseFirstLetter('diego lima da silva'));
 console.log(toUpperCaseFirstLetter('capitalizando a primeira letra de cada palavra'));
 console.log(toUpperCaseFirstLetter(`hello, how are you? i'm fine thank you`));
+
+
+//Questão 5
+const canFormPalindrome = (string) => {
+   const charAmount = 256;
+   let count = new Array(charAmount);
+   count.fill(0);
+
+   for (let i = 0; i < string.length; i++) {
+      count[string[i].charCodeAt()]++;
+   }
+   let odd = 0;
+   for (let i = 0; i < charAmount; i++) {
+      if ((count[i] & 1) != 0) odd++;
+
+      if (odd > 1) return false;
+   }
+   return true;
+   }
+
+console.log(canFormPalindrome('sscaa'));
+console.log(canFormPalindrome('arccear'));
+console.log(canFormPalindrome('arnaldo'));
