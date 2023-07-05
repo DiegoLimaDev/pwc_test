@@ -47,7 +47,7 @@ const printSubStr = (str,low,high) => {
    return console.log(arr.join(''));
 };
 
-const longestPalSubstr = (str) => {
+const longestPalindrome = (str) => {
    let maxLength = 1;
    let start = 0;
 
@@ -68,9 +68,9 @@ const longestPalSubstr = (str) => {
    return maxLength;
 }
 
-longestPalSubstr('deadeye');
-longestPalSubstr('abracadabra')
-longestPalSubstr('amarildo')
+longestPalindrome('deadeye');
+longestPalindrome('abracadabra')
+longestPalindrome('amarildo')
 
 
 //Questão  4
