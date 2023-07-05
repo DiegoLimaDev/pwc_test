@@ -37,6 +37,42 @@ console.log(removeDuplicate('Fazendo um teste de caracteres duplicados'));
 console.log(removeDuplicate('PWC is an amazing company'));
 console.log(removeDuplicate('Hello, World!'));
 
+
+//Questão 3
+const printSubStr = (str,low,high) => {
+   let arr = [];
+   for (let i = low; i <= high; i++) {
+      arr.push(str[i]);
+   }
+   return console.log(arr.join(''));
+};
+
+const longestPalSubstr = (str) => {
+   let maxLength = 1;
+   let start = 0;
+
+   for (let i = 0; i < str.length; i++) {
+      for (let j = i; j < str.length; j++) {
+         let flag = 1;
+         for (let k = 0; k < (j - i + 1) / 2; k++)
+            if (str[i + k] != str[j - k]) flag = 0;
+
+            if (flag!=0 && (j - i + 1) > maxLength) {
+               start = i;
+               maxLength = j - i + 1;
+            }
+      }
+   }
+   printSubStr(str, start, start + maxLength - 1);
+
+   return maxLength;
+}
+
+longestPalSubstr('deadeye');
+longestPalSubstr('abracadabra')
+longestPalSubstr('amarildo')
+
+
 //Questão  4
 const toUpperCaseFirstLetter = (string) => {
    const arr = string.split(' ');
